@@ -1,4 +1,22 @@
-@import "tailwindcss";
-@import 'swiper/css';
-@import 'swiper/css/pagination';
-@import 'swiper/css/navigation';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom utility to avoid Tailwind unknown-utility errors */
+@layer utilities {
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@import "tailwindcss"; /* keep if your build expects it */
+
+html, body {
+  @apply font-sans;
+}
+
+/* replace @apply with a plain rule so Tailwind won't error */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+}
+
